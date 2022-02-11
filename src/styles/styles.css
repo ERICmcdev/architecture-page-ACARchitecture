@@ -16,6 +16,50 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
+@-webkit-keyframes animationWelcome {
+  from {
+    -webkit-transform: translateX(190px);
+            transform: translateX(190px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes animationWelcome {
+  from {
+    -webkit-transform: translateX(190px);
+            transform: translateX(190px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes animationAboutMe {
+  from {
+    -webkit-transform: translateX(-190px);
+            transform: translateX(-190px);
+  }
+  to {
+    -webkit-transform: translateX(60%);
+            transform: translateX(60%);
+  }
+}
+
+@keyframes animationAboutMe {
+  from {
+    -webkit-transform: translateX(-190px);
+            transform: translateX(-190px);
+  }
+  to {
+    -webkit-transform: translateX(60%);
+            transform: translateX(60%);
+  }
+}
+
 header {
   width: 100%;
   padding: 2% 4%;
@@ -95,7 +139,7 @@ header {
   width: 100%;
 }
 
-menu {
+.nav {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,11 +152,10 @@ menu {
           justify-content: space-evenly;
   max-width: 1600px;
   background-color: rgba(233, 190, 104, 0.637);
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
 }
 
-menu a {
+.nav li,
+.nav a {
   padding: 1% 2%;
   font-size: 16px;
   color: black;
@@ -121,7 +164,13 @@ menu a {
   transition: 0.3s;
 }
 
-menu :hover {
+.nav a {
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.nav > li > a:hover {
   background-color: rgba(129, 90, 90, 0.171);
   color: azure;
 }
@@ -132,6 +181,8 @@ menu :hover {
   max-width: 1600px;
   text-align: right;
   color: azure;
+  -webkit-animation: animationWelcome 2s 1;
+          animation: animationWelcome 2s 1;
 }
 
 .wrapper-text-welcome h1 {
@@ -178,6 +229,8 @@ menu :hover {
   -webkit-transform: translateX(60%);
           transform: translateX(60%);
   color: #474747;
+  -webkit-animation: animationAboutMe 2s 1;
+          animation: animationAboutMe 2s 1;
 }
 
 .box-left-page-index h2 {
@@ -192,9 +245,9 @@ menu :hover {
   text-align: start;
 }
 
-.box-left-page-index a button {
+.transform-items-page-index a > button[type="submit"] {
   padding: 15px;
-  background-color: #fffefd;
+  background-color: #b9b1a8;
   color: black;
   font-weight: 600;
   text-decoration: none;
@@ -206,9 +259,8 @@ menu :hover {
   width: 80%;
 }
 
-.transform-items-page-index > a,
-button:hover {
-  background-color: rgba(129, 90, 90, 0.171);
+.transform-items-page-index a > button[type="submit"]:hover {
+  background-color: rgba(141, 136, 126, 0.822);
   color: white;
 }
 
@@ -551,9 +603,11 @@ footer .items-sub-menu h3 {
             transform: translateY(-20%);
     width: 100%;
   }
-  menu a {
-    border-right: rgba(255, 255, 255, 0.26) 1px solid;
-    padding: 10px 4px;
+  .nav li,
+  .nav a {
+    border: rgba(255, 255, 255, 0.13) 1px solid;
+    padding: 9px 0px;
+    text-align: center;
   }
   .wrapper-article {
     border-bottom: 2px solid #ffffff;
